@@ -1,0 +1,35 @@
+[package]
+name = "aliri"
+description = "Implementations of the Javascript/JSON Object Signing and Encryption (JOSE) standards"
+keywords = [ "jwk", "jwa", "jose", "jwt", "auth" ]
+categories = [ "authentication" ]
+version = "0.6.3"
+authors = ["Marcus Griep <marcus@griep.us>"]
+edition = "2018"
+readme = "../README.md"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/neoeinstein/aliri"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+ec = [ "openssl" ]
+rsa = []
+hmac = []
+private-keys = [ "openssl" ]
+unstable = []
+no-unstable = []
+default = [ "hmac", "rsa" ]
+
+[package.metadata.docs.rs]
+rustc-args = ["--cfg", "docsrs"]
+features = [ "rsa", "ec", "hmac", "private-keys" ]
+
+[dependencies]
+
+[dev-dependencies]
+color-eyre = "0.6"
+tracing-test = "0.2.4"
+
+[package.metadata.workspaces]
+independent = true

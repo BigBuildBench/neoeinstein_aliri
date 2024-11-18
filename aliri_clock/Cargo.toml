@@ -1,0 +1,22 @@
+[package]
+name = "aliri_clock"
+description = "Timing utilities used by the `aliri` family of crates"
+keywords = [ "unixtime", "test" ]
+categories = [ "date-and-time", "development-tools::testing" ]
+version = "0.1.4"
+authors = ["Marcus Griep <marcus@griep.us>"]
+edition = "2018"
+readme = "../README.md"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/neoeinstein/aliri"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[package.metadata.docs.rs]
+features = ["serde"]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[package.metadata.playground]
+features = ["serde"]
